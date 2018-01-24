@@ -1,9 +1,13 @@
 import urllib2.request
 from bs4 import BeautifulSoup
 import pandas as pd
+from pfx_data_collection import http_request_urls
 
-web_address = "http://www.brooksbaseball.net/pfxVB/tabdel_expanded.php?pitchSel=664641&game=gid_2017_04_06_seamlb_houmlb_1/&s_type=&h_size=700&v_size=500"
-pitcher_table = urllib2.urlopen(web_address)
-soup_table = BeautifulSoup(pitcher_table)
-read_html_str = str(soup_table)
-pitcher_df = pd.read_html(read_html_str, header=0)
+for url in http_request_urls:
+    pitcher_table = urllib2.urlopen(url)
+    soup_table = BeautifulSoup(pitcher_table)
+    read_html_str = str(soup_table)
+    if 'result not valid' in read_html_str:
+        continue
+    else:
+        pitcher_df = pd.read_html(read_html_str, header=0)
