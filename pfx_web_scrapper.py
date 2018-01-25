@@ -1,12 +1,11 @@
 from bs4 import BeautifulSoup
 import pandas as pd
 import psycopg2
-from lxml.html import parse
 import csv
 import io
 from sqlalchemy import create_engine
 from lxml.html import parse
-from pfx_data_collection import http_request_urls
+import pfx_data_collection
 import time
 
 
@@ -25,15 +24,18 @@ def write_to_table(df, db_engine, table_name, if_exists='fail'):
             cursor.copy_expert(copy_cmd, string_data_io)
         connection.connection.commit()
 
-for url in http_request_urls:
+for url in pfx_data_collection.http_request_urls:
     time.sleep(5)
     page = parse(url)
     rows = page.xpath("body/table")[0].findall("tr")
     data = list()
     for row in rows:
-        data.append([c.text for c in row.getchildren()])
+            data.append([c.text for c in row.getchildren()])
 
-    pitcher_df = pd.DataFrame(data, columns = ["dateStamp", "park_sv_id", "play_guid",
+    if len(data) == 1:
+        continue
+    else:
+        pitcher_df = pd.DataFrame(data, columns = ["dateStamp", "park_sv_id", "play_guid",
         "ab_total", "ab_count", "pitcher_id", "batter_id", "ab_id", "des", "pitch_type",
         "pitch_id", "sz_top", "sz_bot", "pfx_xDataFile", "pfx_zDataFile", "mlbam_pitch_name",
         "zone_location", "pitch_con", "stand", "strikes", "balls", "p_throws", "gid",
@@ -42,6 +44,6 @@ for url in http_request_urls:
         "y0", "z0", "vx0", "vy0", "vz0", "ax", "ay", "az", "start_speed", "px",
         "pz", "pxold", "pzold", "tm_spin", "sb"])
 
-    address = 'postgresql://@localhost:5432/pfxbaseballdata'
-    engine = create_engine(address)
-    write_to_table(pitcher_df, engine, 'test_pitches', "append")
+        address = 'postgresql://@localhost:5432/pfxbaseballdata'
+        engine = create_engine(address)
+        write_to_table(pitcher_df, engine, 'test_pitches', "append")
