@@ -7,6 +7,7 @@ import io
 from sqlalchemy import create_engine
 from lxml.html import parse
 from pfx_data_collection import http_request_urls
+import time
 
 
 def write_to_table(df, db_engine, table_name, if_exists='fail'):
@@ -25,6 +26,7 @@ def write_to_table(df, db_engine, table_name, if_exists='fail'):
         connection.connection.commit()
 
 for url in http_request_urls:
+    time.sleep(5)
     page = parse(url)
     rows = page.xpath("body/table")[0].findall("tr")
     data = list()
