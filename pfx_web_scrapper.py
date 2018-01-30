@@ -46,4 +46,4 @@ for url in pfx_data_collection.http_request_urls:
 
         address = 'postgresql://@localhost:5432/pfxbaseballdata'
         engine = create_engine(address)
-        write_to_table(pitcher_df, engine, 'test_pitches', "append")
+        write_to_table(pitcher_df, engine, 'pitch_game_data', "append")
