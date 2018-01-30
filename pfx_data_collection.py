@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-player_id_df = pd.read_csv('/Users/camerononeill/Developer/Baseball_Pitch_Predictor/player_id.csv', encoding = "ISO-8859-1")
+player_id_df = pd.read_csv('/Users/camerononeill/Developer/pfx_hit_predictor/player_id.csv', encoding = "ISO-8859-1")
 schedule_df = pd.read_csv('/Users/camerononeill/Developer/Baseball_Pitch_Predictor/schedule_table.csv')
 
 player_id_dct = dict()
