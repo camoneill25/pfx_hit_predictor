@@ -6,7 +6,7 @@ Baseball is a game built on statistics, one of the most fundamental parts of bas
 
 The project primarily involves Python 3 for web-scraping, model construction, and feature selection/analysis. PSQL (or any SQL DB) for data storage. Make sure you have them installed on your machine before running the first set of scripts, which will place data into a SQL DB. Recommend looking at brooksbaseball.net to understand data structure and source.
 
-The entirety of this project was completed on macOS, I have not, nor doI have plans for a Windows machine test.
+The entirety of this project was completed on macOS, I have not, nor do I have plans for a Windows machine test.
 
 ### Prerequisites
 * Python 3.7 or later
@@ -27,9 +27,7 @@ Anaconda or a package with numpy, pandas, and sklearn
   
 Download: cleaned_player_id.csv | batter_stats_table.csv | pitcher_stats_table.csv | schedule_table.csv
 * On GitHub Repo 
-'''
-Make sure these are all csv UTF-8 in format
-'''
+* Make sure these are all csv UTF-8 in format
 
 
 ## Running the tests
@@ -39,6 +37,15 @@ Run Scripts in this order:
 * pfx_webscrapper.py
 * NOTE: The script will take rouhgly 24 to 48 hours running to collect all the data and will be placed in the SQL table outlined in the create table script
 
+### The next section is open ended here is a suggested order
+EDA:
+* Scatter matrix
+* Partial Dependency Plots
+* Convert % to logodds
+
+Analysis Models:
+* Model Selection
+* Feature Importance/Analysis
 
 ## Built With
 
