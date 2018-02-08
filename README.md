@@ -10,14 +10,10 @@ The entirety of this project was completed on macOS, I have not, nor doI have pl
 
 ### Prerequisites
 
-Python 3.7 or later
-Working knowledge of baseball
-PSQL or any SQL DB
-
-
-```
-You should know what BB_per_9 and pitcher xfip means to understand all statistical features within data set.
-```
+*Python 3.7 or later
+*Working knowledge of baseball
+*PSQL or any SQL DB
+*NOTE:You should know what BB_per_9 and pitcher xfip means to understand all statistical features within data set.
 
 ### Installing
 
@@ -42,15 +38,14 @@ Make sure these are all csv UTF-8 in format
 Run Scripts in this order:
 *pfx_data_collections.py 
 *pfx_webscrapper.py
-'''
-The script will take rouhgly 24 to 48 hours running to collect all the data and will be placed in teh SQL table outlined in the create table script
-'''
+* NOTE: The script will take rouhgly 24 to 48 hours running to collect all the data and will be placed in teh SQL table outlined in the create table script
 
 
 ## Built With
 
 * [sqlalchemy](https://www.sqlalchemy.org) - SQL Management
-* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) - XML
+* [psycopg2](http://initd.org/psycopg/) - Python SQL control
 
 ## Contributing
 
