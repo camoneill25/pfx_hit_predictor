@@ -25,7 +25,7 @@ def write_to_table(df, db_engine, table_name, if_exists='fail'):
         connection.connection.commit()
 
 for url in pfx_data_collection.http_request_urls:
-    time.sleep(5)
+    time.sleep(1)
     page = parse(url)
     rows = page.xpath("body/table")[0].findall("tr")
     data = list()
@@ -46,4 +46,4 @@ for url in pfx_data_collection.http_request_urls:
 
         address = 'postgresql://@localhost:5432/pfxbaseballdata'
         engine = create_engine(address)
-        write_to_table(pitcher_df, engine, 'pitch_game_data', "append")
+        write_to_table(pitcher_df, engine, 'new_pitch_game_data', "append")
