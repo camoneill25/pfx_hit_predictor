@@ -9,11 +9,10 @@ The project primarily involves Python 3 for web-scraping, model construction, an
 The entirety of this project was completed on macOS, I have not, nor doI have plans for a Windows machine test.
 
 ### Prerequisites
-
-*Python 3.7 or later
-*Working knowledge of baseball
-*PSQL or any SQL DB
-*NOTE:You should know what BB_per_9 and pitcher xfip means to understand all statistical features within data set.
+* Python 3.7 or later
+* Working knowledge of baseball
+* PSQL or any SQL DB
+* NOTE:You should know what BB_per_9 and pitcher xfip means to understand all statistical features within data set.
 
 ### Installing
 
@@ -36,8 +35,8 @@ Make sure these are all csv UTF-8 in format
 ## Running the tests
 
 Run Scripts in this order:
-*pfx_data_collections.py 
-*pfx_webscrapper.py
+* pfx_data_collections.py 
+* pfx_webscrapper.py
 * NOTE: The script will take rouhgly 24 to 48 hours running to collect all the data and will be placed in teh SQL table outlined in the create table script
 
 
