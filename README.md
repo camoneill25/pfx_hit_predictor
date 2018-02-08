@@ -37,7 +37,7 @@ Make sure these are all csv UTF-8 in format
 Run Scripts in this order:
 * pfx_data_collections.py 
 * pfx_webscrapper.py
-* NOTE: The script will take rouhgly 24 to 48 hours running to collect all the data and will be placed in teh SQL table outlined in the create table script
+* NOTE: The script will take rouhgly 24 to 48 hours running to collect all the data and will be placed in the SQL table outlined in the create table script
 
 
 ## Built With
@@ -62,7 +62,7 @@ Currently Version 1.0
 
 ## License
 
-This project is licensed under the GUI License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
